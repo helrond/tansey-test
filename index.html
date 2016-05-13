@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Archives or Not?</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="col-xs-10 col-xs-offset-1">
+
+        <h1 class="text-center">About Archives or Not?</h1>
+        <p class="text-center">Is that article or blog post really about archives? Drop a link to the full text (in HTML) in the search below and I'll tell you!</p>
+
+        <form class="form-inline col-xs-12">
+          <div class="form-group col-xs-8 col-xs-offset-1">
+            <label class="sr-only" for="url">Link to check</label>
+            <div class="input-group col-xs-12">
+              <input type="text" class="form-control" id="url" placeholder="Enter a link to check here">
+            </div>
+          </div>
+          <button id="fetch" type="submit" class="btn btn-primary col-xs-2">Check it!</button>
+        </form>
+
+        <div class="col-xs-12">
+          <h2 class="text-center" id="result"></h2>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="script/fetchHtml.js"></script>
+  </body>
+</html>
