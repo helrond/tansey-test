@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Archives or Not?</title>
+    <title>The Tansey Test</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
@@ -13,7 +13,7 @@
 
       <div class="col-xs-10 col-xs-offset-1">
 
-        <h1 class="text-center">About Archives or Not?</h1>
+        <h1 class="text-center">The Tansey Test</h1>
         <p class="text-center">Is that article or blog post really about archives? Drop a link to the full text (in HTML) in the search below and I'll tell you!</p>
 
         <form class="form-inline col-xs-12">
@@ -28,6 +28,37 @@
 
         <div class="col-xs-12">
           <h2 class="text-center" id="result"></h2>
+        </div>
+
+        <div class="col-xs-12 text-center">
+          <div id="explanation" data-toggle="modal" data-target="#explanationModal" class="btn btn-default">So what's really going on here?</div>
+        </div>
+
+        <!-- Modal -->
+        <div id="explanationModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">How this works</h4>
+              </div>
+              <div class="modal-body">
+                <h5>tldr; this checks a link to see how many mentions of archivists a web page contains.</h5>
+                <p>It was inspired by <a href="https://twitter.com/eiratansey/status/727271643786137600">a tweet</a> from my friend <a href="http://eiratansey.com/">Eira Tansey</a>.</p>
+                <h5>The longer version: reference <code>script/fetchHtml.js</code></h5>
+                <ul>
+                  <li>Use Yahoo Query Language to return a URL's HTML as a JSON object.</li>
+                  <li>Loop through that object and return just the content as an array.</li>
+                  <li>Loop through that array looking for a regular expression ("archivist," case-insensitive), returning the index of each match.</li>
+                  <li>If no hits were returned, tell the user the page isn't about archives</li>
+                  <li>If hits were returned, calculate percentage of content pieces that match the search terms, and display that for the user.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
